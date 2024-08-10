@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Detalle Especial</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            margin: 0;
+            color: #333;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff7e5f;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #feb47b;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        #imageContainer {
+            display: none;
+            margin-top: 20px;
+        }
+        #imageContainer img {
+            width: 300px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para Ti</h1>
+        <p>Elige una opción para descubrir tu mensaje especial</p>
+        <button onclick="revealMessage(1)">Opción 1</button>
+        <button onclick="revealMessage(2)">Opción 2</button>
+        <button onclick="revealMessage(3)">Opción 3</button>
+        <button onclick="revealMessage(4)">¿Sabes quién es la persona más bonita del mundo?</button>
+        <p id="message"></p>
+        <div id="imageContainer">
+            <p>Eres tú <span class="heart">❤</span></p>
+            <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t39.30808-6/450658594_3343450019291715_8259792160835027426_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aaqV3RSZTY8Q7kNvgElMvaX&_nc_ht=scontent.fuio1-1.fna&oh=00_AYAlpjTTbzO6EjBZahDMVhBLetfoY8z6RJLTSEafldkbvg&oe=66BD990D" alt="Persona más bonita">
+        </div>
+    </div>
+
+    <script>
+        function revealMessage(option) {
+            const message = document.getElementById('message');
+            const imageContainer = document.getElementById('imageContainer');
+            
+            imageContainer.style.display = 'none'; // Esconde la imagen por defecto
+
+            if (option === 1) {
+                message.innerHTML = 'Eres la persona más increíble que he conocido. <span class="heart">❤</span>';
+            } else if (option === 2) {
+                message.innerHTML = 'Cada día me haces sonreír más. <span class="heart">❤</span>';
+            } else if (option === 3) {
+                message.innerHTML = 'Me encantaría pasar más tiempo contigo. <span class="heart">❤</span>';
+            } else if (option === 4) {
+                message.innerHTML = '';
+                imageContainer.style.display = 'block'; // Muestra la imagen
+            }
+        }
+    </script>
+</body>
+</html>
